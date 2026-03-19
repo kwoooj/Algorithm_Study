@@ -19,10 +19,15 @@ public class Main_7785_회사에있는사람 {
 			}
 		}
 		
-		//역순으로 출력?
+		//역순으로 출력 -> 스택 써서 뒤에서부터 꺼냄(어차피 Tree 써서 사전 순 정렬 되어있는 상태니까)
+		Stack<String> inCom = new Stack<>();
 		for(String stay : company.keySet()) {
-			System.out.println(stay);
+			inCom.add(stay);
 		}
 		
+		
+		while(!inCom.isEmpty()) {
+			System.out.println(inCom.pop());
+		}
 	}
 }
